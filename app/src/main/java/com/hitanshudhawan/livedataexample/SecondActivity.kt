@@ -16,6 +16,8 @@ class SecondActivity : AppCompatActivity() {
         }
 
         data.observe(this) {
+            if (it != data.getValue()) throw Exception()
+
             text_view_2.text = it
         }
     }

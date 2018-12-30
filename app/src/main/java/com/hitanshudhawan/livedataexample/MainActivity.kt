@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private val observer: (String?) -> Unit = {
+        if (it != data.getValue()) throw Exception()
+
         text_view.text = it
         Toast.makeText(this, "value changed", Toast.LENGTH_SHORT).show()
     }
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         data.observe(this) {
+            if (it != data.getValue()) throw Exception()
+
             text_view_2.text = it
         }
 
