@@ -40,7 +40,9 @@ class LiveData<T> {
         lifecycleObserver.observer.invoke(mValue)
     }
 
-    private inner class LiveDataLifecycleObserver(val owner: LifecycleOwner, val observer: (T?) -> Unit) : LifecycleObserver {
+    private inner class LiveDataLifecycleObserver(
+        val owner: LifecycleOwner, val observer: (T?) -> Unit
+    ) : LifecycleObserver {
 
         @OnLifecycleEvent(Lifecycle.Event.ON_START)
         private fun onStarted() {
@@ -58,6 +60,5 @@ class LiveData<T> {
         }
 
     }
-
 }
 ```
