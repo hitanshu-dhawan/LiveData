@@ -5,7 +5,7 @@ Full article here: https://medium.com/androidiots/how-i-made-my-own-livedata-1fa
 
 <br>
 
-```
+```kotlin
 class LiveData<T> {
 
     private var mValue: T? = null
